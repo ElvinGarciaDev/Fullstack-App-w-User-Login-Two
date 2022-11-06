@@ -1,0 +1,39 @@
+
+.card {
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+
+}
+
+.bi{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.bi:hover{
+    color: blue;
+}
+
+body {
+    background: rgb(64, 66, 88)
+}
+
+.topSection, .btn {
+    color: white;
+}
+
+#displayMovies {
+    margin-left: 3rem;
+}
+
+#profile {
+    display: block;
+    width: 10%;
+    margin: 1rem auto;
+}
+
+a {
+    color: white;
+    display: block;
+    text-decoration: none;
+}

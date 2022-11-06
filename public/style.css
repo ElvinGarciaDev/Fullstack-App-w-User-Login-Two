@@ -1,0 +1,31 @@
+body{
+  padding-top:80px;
+  word-wrap:break-word;
+  /* background-image: url("./img/background.jpeg"); */
+  background-size: contain;
+  /* background-repeat: no-repeat; */
+  background: rgb(64, 66, 88)
+
+}
+
+.card {
+  margin-left: 1rem;
+  margin-top: 2rem;
+  font-size: 1.3rem;
+
+}
+
+#topSection {
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+#button-addon1{
+  display: block;
+  margin: 1rem auto;
+
+}

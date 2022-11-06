@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <title>Movies</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!--BootStrap icon cdn-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section id="topSection">
+    <div class="container text-center">
+      <h1>Movie Finder</h1>
+      <h3>Look up a movie and bookmark it!</h3>
+      <span>Bookmarked movies will be displayed here on your profile</span>
+      <button class="btn btn-outline-secondary" type="button" id="button-addon1" ><a href="searchMovie">Search For A Movie</a></button>
+
+      
+    </div>
+  </section>
+
+  <section class="orderDisplay p-4">
+    <div class="container">
+      <div class="row text-center g-0">
+
+
+        <% for(let i = 0; i < Bookmarks.length; i++) {%>
+        
+          <%if (user.local.email === Bookmarks[i].Email) { %>
+  
+  
+            <div class="card" style="width: 19rem;">
+              <img src=<%= Bookmarks[i].Image %>} class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><%= Bookmarks[i].Title %></h5>
+                <p class="card-text"><%= Bookmarks[i].Year %></p>
+                <span><i class="bi bi-trash"></i></span>
+                <span><i class="bi bi-check-circle"></i></span>
+  
+                <% if (Bookmarks[i].Complete === "true") { %>
+                  <p id="orderComplete">Watched</p>
+                  <%} else { %>
+                  <p id="orderPending">Pending </p>
+                  <% } %>
+  
+  
+              </div>
+            </div>
+  
+            <% } %>
+  
+          
+      <% } %>
+  
+
+      </div>
+
+    </div>
+  </section>
+
+
+<script src="main.js"></script>
+
+</body>
+</html>
