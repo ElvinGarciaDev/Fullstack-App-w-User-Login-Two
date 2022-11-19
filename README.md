@@ -10,7 +10,7 @@
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Node.js, Express, MongoDB, EJS, Bootstrap
+**Tech used:** HTML, CSS, JavaScript, Node.js, Express, MongoDB, EJS, Bootstrap, Passport.js
 
 Fullstack application where users can log in, search for a movie or tv series and bookmark it. Once a movie/show is bookmarked it's saved to your profile. Only movies/shows the logged-in user has bookmarked will show on the profile. Once a movie has been bookmarked, the user has the option of clicking the check icon to mark it as completed, or can click the trash icon to delete a movie. One a movie is marked complete, the user has the option to give them movie a review. The logged-in user has access to only modify the movies on their profile. This prevents any users from removing any similar movies other users might have bookmarked.
 
