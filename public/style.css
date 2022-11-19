@@ -27,19 +27,15 @@ a {
 
 }
 
-@media screen and (min-width: 500px){
+@media screen and (max-width: 768px){
   .card {
-    width: 100% !important;
-    font-size: 3rem;
+    width: 100% ;
+    font-size: 2rem;
   }
 
-  .card-title,#topSection, button a  {
-    font-size: 3rem;
+  .card-title,#topSection, button a, nav, .navbar-brand  {
+    font-size: 2rem;
 
-  }
-
-  nav, .navbar-brand {
-    font-size: 3rem;
   }
 
 
