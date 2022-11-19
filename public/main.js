@@ -47,3 +47,28 @@ Array.from(thumbUp).forEach(function(element) {
       })
     });
 });
+
+
+let ratingInput = document.querySelectorAll("#reviewData");
+
+Array.from(ratingInput).forEach(function (element) {
+  element.addEventListener('change', function (item) {
+  let rating = item.target.value
+   const name = this.parentNode.childNodes[1].innerText
+
+   fetch('movieRaiting', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      'name': name,
+      'rating': rating
+    })
+  })
+  .then(function (response) {
+    window.location.reload()
+  })
+    
+  })
+})

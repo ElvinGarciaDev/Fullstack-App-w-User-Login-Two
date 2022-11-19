@@ -1,6 +1,6 @@
 let result = document.getElementById("displayMovies")
 
-document.querySelector("button").addEventListener("click", async () => {
+document.querySelector(".search").addEventListener("click", async () => {
 
     // Get the user value from the input
     let UserValue = document.querySelector("input")
@@ -34,9 +34,14 @@ document.querySelector("button").addEventListener("click", async () => {
         // Select the Star Icons
         var thumbUp = document.getElementsByClassName("bi");
 
+
         Array.from(thumbUp).forEach(function(element) {
+
             
             element.addEventListener('click', function() {
+
+                element.innerText = "Bookmarked"
+                element.style.color = 'blue'
 
             // Grab the movie title, year and image so we can send it with the POST request
             let title = this.parentNode.parentNode.childNodes[1].innerText

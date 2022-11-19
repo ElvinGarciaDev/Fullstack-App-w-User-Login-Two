@@ -1,9 +1,5 @@
 body{
-  padding-top:80px;
-  word-wrap:break-word;
-  /* background-image: url("./img/background.jpeg"); */
-  background-size: contain;
-  /* background-repeat: no-repeat; */
+
   background: rgb(64, 66, 88)
 
 }
@@ -17,6 +13,7 @@ body{
 
 #topSection {
   color: white;
+  margin-top: 2rem;
 }
 
 a {
@@ -27,5 +24,19 @@ a {
 #button-addon1{
   display: block;
   margin: 1rem auto;
+
+}
+
+@media screen and (max-width: 500px){
+  .card {
+    width: 100% !important;
+    font-size: 3rem;
+  }
+
+  /* .card-title,#topSection, button a  {
+    font-size: 3rem;
+
+  } */
+
 
 }

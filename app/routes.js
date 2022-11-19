@@ -34,11 +34,11 @@ module.exports = function(app, passport, db) {
 
 // message board routes ===============================================================
 
-    // Post request when user submits a budget
+    // When the user clicks to add a movie/tv show to bookmars. Post is coming from js file
     app.post('/addBookMark', (req, res) => {
         console.log(req.body)
         // Passing Email: req.user.local.email so that the email of the logged in user can be saved to the collection. This will help us only show the post made by this email address
-      db.collection('favorite').insertOne({Title: req.body.Title, Year: req.body.Year, Image: req.body.Image, Complete: "false", Email: req.user.local.email}, (err, result) => {
+      db.collection('favorite').insertOne({Title: req.body.Title, Year: req.body.Year, Image: req.body.Image, Complete: "false", Email: req.user.local.email, Raiting: ""}, (err, result) => {
         if (err) return console.log(err)
         console.log('saved to database')
         console.log(req.user.local.email)
@@ -46,6 +46,7 @@ module.exports = function(app, passport, db) {
       })
     })
 
+    // When user clicks on checkmark, it sends a put request to db to update it from movie false(not watched) to complete(movie watched)
     app.put('/updateComplete', (req, res) => {
       db.collection('favorite')
       .findOneAndUpdate({Title: req.body.Title, Title: req.body.Title}, {
@@ -59,16 +60,32 @@ module.exports = function(app, passport, db) {
     })
 
 
+    // When user clicks on the trash icon to remove a movie
     app.delete('/deleteMovie', (req, res) => {
      
       // Make sure to pass in Email: req.user.local.email this will delete only the movies that the logged in user has added, not any other users bookmarks
-
       db.collection('favorite').findOneAndDelete({Title: req.body.Title, Email: req.user.local.email}, (err, result) => {
         if (err) return res.send(500, err)
         // res.redirect('/profile')
         res.send(JSON.stringify({'Result': req.body.Title}))
       })
     })
+
+       // Post request when user submits a movie review
+       app.put('/movieRaiting', (req, res) => {
+        db.collection('favorite')
+        .findOneAndUpdate({Title: req.body.name, Email: req.user.local.email}, { // Make sure to pass in Email: req.user.local.email this will give a review  the movies that the logged in user has reviewd, not any other users bookmarks
+          $set: {
+            Raiting: req.body.rating
+          }
+        }, {
+          sort: {_id: -1},
+          upsert: true
+        }, (err, result) => {
+          if (err) return res.send(err)
+          res.send(result)
+        })
+      })
 
 // =============================================================================
 // AUTHENTICATE (FIRST LOGIN) ==================================================
