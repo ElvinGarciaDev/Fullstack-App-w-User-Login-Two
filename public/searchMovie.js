@@ -6,7 +6,7 @@ document.querySelector(".search").addEventListener("click", async () => {
     let UserValue = document.querySelector("input")
 
     try {
-        const response = await fetch(`http://www.omdbapi.com/?s=${UserValue.value}&apikey=e8425006`)
+        const response = await fetch(`https://www.omdbapi.com/?s=${UserValue.value}&apikey=e8425006`)
         const data = await response.json()
 
         console.log(data)
