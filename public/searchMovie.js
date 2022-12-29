@@ -70,5 +70,3 @@ document.querySelector(".search").addEventListener("click", async () => {
     });
 
 })
-
-

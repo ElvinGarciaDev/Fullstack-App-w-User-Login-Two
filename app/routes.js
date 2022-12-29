@@ -15,6 +15,8 @@ module.exports = function(app, passport, db) {
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
         db.collection('favorite').find().toArray((err, result) => {
+          console.log(result)
+
 
           if (err) return console.log(err)
           res.render('profile.ejs', {
