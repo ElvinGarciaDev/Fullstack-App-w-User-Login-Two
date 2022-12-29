@@ -23,4 +23,3 @@ Fullstack application where users can log in, search for a movie or tv series an
 
 1. run `npm run savage`
 2. Navigate to `localhost:8080`
-# Fullstack-App-w-User-Login-Two
